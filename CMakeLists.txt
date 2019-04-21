@@ -2,6 +2,9 @@
 # Copyright (C) Electronic Arts Inc.  All rights reserved.
 #-------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 3.1)
+
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_LIST_DIR}/devkitPPC.cmake)
+
 project(EASTL)
 
 #-------------------------------------------------------------------------------------------
@@ -38,6 +41,7 @@ add_definitions(-D_CHAR16T)
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 add_definitions(-D_SCL_SECURE_NO_WARNINGS)
 add_definitions(-DEASTL_OPENSOURCE=1)
+add_definitions(-D EA_PLATFORM_GEKKO)
 
 #-------------------------------------------------------------------------------------------
 # Library definition

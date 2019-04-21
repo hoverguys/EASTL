@@ -96,7 +96,20 @@
 	#define EA_PLATFORM_DESKTOP 1
 #endif
 
-#if defined(EA_PLATFORM_PS4) || defined(__ORBIS__) || defined(EA_PLATFORM_KETTLE)
+#if defined(EA_PLATFORM_GEKKO)
+	#define EA_PLATFORM_NAME "Gamecube"
+	#define EA_PLATFORM_DESCRIPTION "Nintendo Gamecube / Wii"
+	#define EA_PROCESSOR_PPC_GEKKO
+	#if defined(__GNUC__) || defined(__clang__)
+		#define EA_ASM_STYLE_ATT 1
+	#endif
+	#define EA_PLATFORM_CONSOLE
+	#define EA_SYSTEM_BIG_ENDIAN
+	#define EA_MISALIGNED_SUPPORT_LEVEL 0
+	#define EA_PLATFORM_PTR_SIZE 4
+	#define EA_PLATFORM_WORD_SIZE 4
+	#define EA_CACHE_LINE_SIZE 32
+#elif defined(EA_PLATFORM_PS4) || defined(__ORBIS__) || defined(EA_PLATFORM_KETTLE)
 	// PlayStation 4
 	// Orbis was Sony's code-name for the platform, which is now obsolete.
 	// Kettle was an EA-specific code-name for the platform, which is now obsolete.
